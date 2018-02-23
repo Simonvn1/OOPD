@@ -35,4 +35,8 @@ class Damsteen {
       geselecteerd = true;
     }
   }
+  
+  String toString() {
+    return "I'M a checkers piece";
+  }
 }

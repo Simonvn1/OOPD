@@ -36,6 +36,7 @@ void draw() {
 void mousePressed() {
   for (int i = 0; i<stenen.length; i++) {
     stenen[i].klikDamsteen(); 
+    println(stenen[i]);
   }
 }
 
