@@ -6,7 +6,7 @@ public abstract class WeergaveObject {
 	protected float x,y,vx,vy,ax,ay;
 	protected float breedte, hoogte;
 	protected boolean isZichtbaar;
-	protected ArrayList<IReageerder> reageerderLijst;
+	protected ArrayList<IReageerder> reageerderLijst = new ArrayList<>();
 	
 	public WeergaveObject(float x, float y, float vx, float vy, float ax, float ay, float breedte, float hoogte,
 			boolean isZichtbaar) {
@@ -112,7 +112,9 @@ public abstract class WeergaveObject {
 	protected abstract boolean isMuisBinnen(int muisX,int muisY);
 	
 	protected void behandelMousePressedGebeurtenis() {
-		
+		for (IReageerder r : reageerderLijst) {
+			r.doeActie();
+		}
 	}
 	
 	public void voegReageerderToe(IReageerder reageerder) {
